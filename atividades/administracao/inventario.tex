@@ -1,0 +1,32 @@
+% ========================
+% # Inventário           #
+% ========================
+
+\subsubsection{Inventário e Empréstimos}
+
+A criação do inventário foi uma ideia que surgiu desde o início do mandato desde o momento em que se verificou que era impossível saber todo o material do qual o \acrshort{neeec} era proprietário e o material do qual a \acrshort{fctuc} era proprietária mas que estava alocado ao \acrshort{neeec}. Adicionalmente, no início do mandato várias foram as pessoas a vir à Sala do Núcleo solicitar materiais que alegavam ser seus, não havendo registo de nada. Este foi um processo que demorou quase a totalidade do mandato para ser finalizado.
+
+Inicialmente numa fase embrionária, onde todo o material foi registado num Excel que possuia um separador extra para os materiais que eram emprestados. Como tal, foi necessário etiquetar tudo o que pertencia ao Núcleo, atribuindo um código único a cada produto. Para isso, foi feito um pedido ao GRI, que nos forneceu etiquetas impressas com o símbolo do \acrshort{neeec} e com um código numérico e de barras, diferente de cada um.
+
+Adicionalmente foi criado um novo modelo de declaração de empréstimos onde eram solicitadas várias informações dos requerentes bem inseridos os dados do material emprestado, garantindo assim que eram declarados os valores de caução recebidos pelo \acrshort{neeec} e os valores restituídos após a devolução do material. Ao se usar este método para registar os empréstimos, passou a ser muito mais fácil controlar todas as entradas e saídas de materiais do Núcleo. Contudo, o facto de ser um modelo de preenchimento manual, associado ao facto de muitos empréstimos terem de ser processados à pressa, levou a que houvesse vários erros no preenchimento dos documentos que poderiam ter causado alguns problemas como, por exemplo, a devolução repetida da caução algo que, felizmente, nunca ocorreu.
+
+No 2º semestre, com a introdução da plataforma informática de gestão interna, esse Excel deixou de existir, passando-se a registar todos os materiais nessa mesma plataforma. Como tal, foi necessário rever todo o inventário, antes de chegar à sua forma final. Nesta revisão, as etiquetas foram todas substituídas para se poder colocar um código QR Code em vez de um código barras, código esse que é lido pela plataforma através de uma câmara. Também os empréstimos passaram a ser processados pela plataforma sendo os documentos preenchidos de forma automática, bastando imprimi-los e assiná-los. Por implementar, fica a separação dos documentos de empréstimos em dois: um modelo para preencher quando o empréstimo é feito e outro para quando o empréstimo é devolvido, algo essencial para a finalização bem sucedida deste processo.
+
+\ifthenelse{\boolean{empresas}}
+{ %TRUE
+}
+{ % FALSE
+Todo o inventário do \acrshort{neeec}, no final deste mandato, pode ser consultado em \ref{inventario}.
+}
+No sistema de gestão informática, cada produto tem várias características associadas: 
+\begin{itemize}
+\item SKU ID - código de identificação único, diferente para cada produto;
+\item Nome do Material - o preenchimento deste campo deve ser feito com cuidado para que o inventário se mantenha atualizado de forma fácil: por exemplo, colocar "armário cinzento do canto" faz com que o inventário fique desatualizado sempre que o armário referido for mudado de sítio sem que seja atualizado o inventário pelo que é preferível colocar "armário cinzento de meia altura";
+\item Se é emprestável ou não - este campo serve para indicar se os materiais podem ser emprestados (por exemplo, uma tenda é emprestável mas um armário não);
+\item Valor da caução - este valor só deve ser preenchido se o material for emprestável e é automaticamente inserido no ato de empréstimos;
+\item Local onde está armazenado - esta informação é muito importante uma vez que o \acrshort{neeec}, cada vez mais, detém mais locais para além da Sala do Núcleo;
+\item Código da \acrshort{fctuc} - esta variável serve para inserir o código dos produtos caso eles sejam da \acrshort{fctuc}. Assim é possível interligar o nosso sistema com o do Aprovisionamento do \acrshort{deec};
+\item Se está ou não emprestado
+\end{itemize}
+
+Deste modo, sempre que for necessário fazer um empréstimo basta aceder à plataforma do interno, adicionar as informações da pessoa/entidade à base de dados e, posteriormente, selecionar o material a ser emprestado. Depois disso é gerado um documento, com todas as informações relativas a esse empréstimo, inclusive a caução total. Imprime-se em duplicado e ambas as entidades assinam. Recebe-se a caução e esta só é devolvida na totalidade se o material estiver nas mesmas condições em que estava antes do empréstimo.

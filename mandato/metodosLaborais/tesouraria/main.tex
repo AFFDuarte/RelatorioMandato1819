@@ -1,0 +1,33 @@
+% ==========================
+% # Tesouraria             #
+% ==========================
+
+\subsection{Tesouraria}
+
+\input{mandato/metodosLaborais/tesouraria/contabilidade.tex}
+
+\input{mandato/metodosLaborais/tesouraria/tesourariaAAC.tex}
+
+\ifthenelse{\boolean{biblia}}
+{ % TRUE
+\input{mandato/metodosLaborais/tesouraria/caixa.tex}
+
+\input{mandato/metodosLaborais/tesouraria/comoFazerCaixas.tex}
+}
+{ % FALSE
+}
+
+\input{mandato/metodosLaborais/tesouraria/montepio.tex}
+
+\input{mandato/metodosLaborais/tesouraria/orcamentosExecucoes.tex}
+
+\input{mandato/metodosLaborais/tesouraria/regimentoInterno.tex}
+
+\input{mandato/metodosLaborais/tesouraria/relacionamentoEmpresas.tex}
+
+\ifthenelse{\boolean{biblia}}
+{ % TRUE
+\input{mandato/metodosLaborais/tesouraria/relacionamentoPolo2.tex}
+}
+{ % FALSE
+}

@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+
+\newcommand{\doctitle}{Relat\'{o}rio do Mandato}
+
+\renewcommand{\baselinestretch}{1.5}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\input{packages.tex}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\newboolean{biblia}
+\setboolean{biblia}{false}
+
+\newboolean{empresas}
+\setboolean{empresas}{false}
+
+\ifthenelse{\boolean{empresas}}
+{ % TRUE
+	\setboolean{biblia}{false}
+}
+{ % FALSE
+}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\ifthenelse{\boolean{biblia}}
+{ % TRUE
+	\newwatermark[oddpages,color=black!15,angle=45,scale=3,xpos=-15,ypos=15]{BÍBLIA}
+}
+{ % FALSE
+}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+\input{headers.tex}
+\pagestyle{fancy}
+
+\title{\doctitle}
+
+\graphicspath{{./imagens/}}
+
+% ======================
+% # Acrónimos          #
+% ======================
+\input{glossario.tex}
+
+\begin{document}
+
+% ======================
+% # Capa               #
+% ======================
+\includepdf[pages={1}]{cover.pdf}
+\clearpage
+\thispagestyle{empty}
+\mbox{}
+\cleardoublepage
+
+% ======================
+% # Aviso .            #
+% ======================
+\setcounter{page}{1}
+\ifthenelse{\boolean{biblia}}
+{ % TRUE
+  \thispagestyle{firststyle}
+  \vspace*{1cm}
+  \input{aviso.tex}
+  \cleardoublepage
+}
+{ % FALSE
+}
+
+% ======================
+% # Índice             #
+% ======================
+\thispagestyle{firststyle}
+\vspace*{1cm}
+\cftsetindents{subsection}{1.5em}{2.8em}
+\cftsetindents{subsubsection}{3.8em}{3.8em}
+\tableofcontents
+\clearpage
+\cleardoublepage
+
+% ======================
+% # Lista de Acrónimos #
+% ======================
+\thispagestyle{firststyle}
+\vspace*{1cm}
+\printglossary[type=\acronymtype]
+\cleardoublepage
+
+% ======================
+% # Preâmbulo          #
+% ======================
+\thispagestyle{firststyle}
+\vspace*{1cm}
+\input{preambulo.tex}
+\cleardoublepage
+
+% ======================
+% # Mandato            #
+% ======================
+\thispagestyle{firststyle}
+\vspace*{1cm}
+\input{mandato/main.tex}
+\cleardoublepage
+
+% ======================
+% # Atividades         #
+% ======================
+\thispagestyle{firststyle}
+\vspace*{1cm}
+\input{atividades/main.tex}
+\cleardoublepage
+
+\ifthenelse{\boolean{empresas}}
+{ % TRUE
+}
+{ % FALSE
+	% ======================
+	% # Contas             #
+	% ======================
+	\thispagestyle{firststyle}
+	\vspace*{1cm}
+	\input{contas/main.tex}
+	\cleardoublepage
+	
+	% ======================
+	% # Inventário         #
+	% ======================
+	\thispagestyle{firststyle}
+	\vspace*{1cm}
+	\input{inventario/main.tex}
+	\cleardoublepage
+}
+
+\end{document}

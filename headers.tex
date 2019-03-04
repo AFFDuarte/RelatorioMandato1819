@@ -1,0 +1,77 @@
+% ========================
+% # Cabeçalho e Margens  #
+% ========================
+
+% \PackageWarning{superpack}{Something is wrong}
+
+% Margens
+\geometry{
+includeheadfoot,
+a4paper,
+left=2.3cm,
+right=2.3cm,
+bottom=1.5cm,
+top=1cm,
+headheight=1.8cm,
+footskip=1.5cm
+}
+
+\newcommand{\hsc}[1]{{\footnotesize\MakeUppercase{#1}}}
+
+% Primeira página
+
+\fancypagestyle{firststyle}
+{
+  \renewcommand{\headrulewidth}{0.4pt}
+  \fancyhf{}
+  \fancyhf[COH]
+  {
+    \includegraphics[width=2cm]{imagens/neeec.png}\\
+    \vspace*{2mm}
+    {\fontsize{12}{14}\selectfont \sffamily N\hsc{úcleo de} E\hsc{studantes de}\\E\hsc{ngenharia} E\hsc{letrotécnica e de} C\hsc{omputadores}\\\hsc{da} A\hsc{ssociação} A\hsc{cadémica de} C\hsc{oimbra}
+  }
+  \vspace*{3mm}
+  }
+
+  \fancyhf[COF]{
+  {
+  \vspace*{5mm}
+  \includegraphics[height=0.75cm]{imagens/neeec_foot.png}\\
+  \vspace*{2mm}
+  \fontsize{9}{10}\selectfont \textbf{Página \thepage\space de \pageref{LastPage}}\\
+  \vspace*{2mm}
+  Piso 4, Torre S, Departamento de Engenharia Eletrotécnica e de Computadores, Coimbra\\
+  www.neeec.pt | 239 796 380 | geral@neeec.pt
+  }
+  }
+  
+  \addtolength{\headheight}{-8pt}
+}
+
+
+% Limpar o cabeçalho e rodapé primeiro
+\fancyhf{}
+
+% Cabeçalho personalizado
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf[COH]
+{
+\includegraphics[height=2cm]{imagens/neeec_head.png}
+}
+
+
+% Rodapé personalizado
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf[COF]{
+{
+\vspace*{2mm}
+\includegraphics[height=0.75cm]{imagens/neeec_foot.png}\\
+\vspace*{2mm}
+\fontsize{9}{10}\selectfont \textbf{Página \thepage\space de \pageref{LastPage}}\\
+\vspace*{2mm}
+Piso 4, Torre S, Departamento de Engenharia Eletrotécnica e de Computadores, Coimbra\\
+www.neeec.pt | 239 796 380 | geral@neeec.pt
+}
+}
+
+\setlength{\footskip}{0cm}
