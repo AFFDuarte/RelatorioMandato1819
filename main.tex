@@ -9,7 +9,7 @@
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \newboolean{biblia}
-\setboolean{biblia}{false}
+\setboolean{biblia}{true}
 
 \newboolean{empresas}
 \setboolean{empresas}{false}
@@ -22,12 +22,12 @@
 }
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
-\ifthenelse{\boolean{biblia}}
-{ % TRUE
-	\newwatermark[oddpages,color=black!15,angle=45,scale=3,xpos=-15,ypos=15]{BÍBLIA}
-}
-{ % FALSE
-}
+%\ifthenelse{\boolean{biblia}}
+%{ % TRUE
+%	\newwatermark[oddpages,color=black!15,angle=45,scale=3,xpos=-15,ypos=15]{BÍBLIA}
+%}
+%{ % FALSE
+%}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \input{headers.tex}
@@ -130,5 +130,15 @@
 	\input{inventario/main.tex}
 	\cleardoublepage
 }
+
+
+% ======================
+% # Contra Capa               #
+% ======================
+\includepdf[pages={1}]{ccover.pdf}
+\clearpage
+\thispagestyle{empty}
+\mbox{}
+\cleardoublepage
 
 \end{document}
